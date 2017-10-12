@@ -38,7 +38,7 @@ if __name__ == "__main__":
 
     D = discriminant(a, b, c)
 
-    print "D = %s" % D
+    print "D = %s" % round(D, 2)
 
     if D > 0:
         x_one = (-b + math.sqrt(D)) / (2*a)
