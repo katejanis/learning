@@ -36,10 +36,6 @@ class SquareTest(unittest.TestCase):
         out = subprocess.check_output(['python', 'square.py', '10', '-2', '10'])
         self.assertEqual(out, 'D = -396.0\nNo value\n')
 
-    # def test_input_two_values(self):
-    #     out = subprocess.call(['python', 'square.py', '10', '-2'])
-    #     print out
-    #     self.assertEquals(out, 'error: too few arguments')
 
 if __name__ == '__main__':
     unittest.main()
