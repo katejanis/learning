@@ -1,11 +1,11 @@
 def discount(amount)
-  if amount >= 10000.00
-    puts "Disount is 10%"
-  elsif amount >= 5000.00
-    puts "Discount is 5%"
-  elsif amount >= 1000.00
-    puts "Discount is 1%"
+  if amount >= 1000.00
+    return 0.1
+  elsif amount >= 500.00
+    return 0.05
+  elsif amount >= 100.00
+    return 0.01
   else
-    puts "No discount"
+    return false
   end
 end
