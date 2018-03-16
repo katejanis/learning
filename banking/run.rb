@@ -48,7 +48,7 @@ if age >= 13
     items = gets.chomp
     items = items.to_i
     dscnt = discount(value) if member and items >= 3 and age >= 21
-    dscnt = 0.03 if items >= 3 and value <= 99.99 and (13..20) === age
+    dscnt = 0.03 if items >= 3 and value <= 99.99 and (13..19) === age
   end
 else
   customer_service = false
