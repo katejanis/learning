@@ -7,9 +7,9 @@ class BankingAutocheck(unittest.TestCase):
         bank = pexpect.spawn('ruby run.rb')
         bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
         bank.sendline('12')
-        bank.expect('Customer service: false')
-        bank.expect('Offer membership: false')
-        bank.expect('Discount rate: false')
+        bank.expect('Customer service: false', self.timeout)
+        bank.expect('Offer membership: false', self.timeout)
+        bank.expect('Discount rate: false', self.timeout)
         bank.interact()
 
 if __name__ == '__main__':
