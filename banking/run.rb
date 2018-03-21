@@ -1,59 +1,56 @@
 require_relative('main')
-puts 'Banking v0.3'
+puts 'Banking v0.4'
 puts "\n"
-
-# Set defaults
-dscnt = false
-offer_membership = false
 
 # Get age
 puts 'Customer age (integer):'
 age = gets.chomp
 age = age.to_i
 
-if age >= 21
+# Initialize
+customer = Customer.new(age)
+
+if customer.age >= 21
   # Check if member
   puts 'Is customer a member? (y, n)'
   member = gets.chomp
   case member
   when 'y'
-    member = true
+    customer.member = true
   when 'n'
-    member = false
+    customer.member = false
   end
-
   # Get historical transactions if not member
-  if not member
+  if not customer.member
     puts 'Input number of previous transactions:'
     trns = gets.chomp
-    trns = trns.to_i
-    offer_membership = true if trns >= 10
+    customer.trns = trns.to_i
+    customer.offer_membership = true if customer.trns >= 10
   end
-  
 else
-  member = false
+  customer.member = false
 end
 
 # Process request if appropriate age
-if age >= 13
-  customer_service = true
+if customer.age >= 13
+  customer.service = true
   # Get transaction value
   puts 'Input transaction value, $'
   value = gets.chomp
-  value = value.to_f
+  transaction = Transaction.new(value.to_f)
 
   # Get item number
-  unless age <= 19 and value >= 100.00
+  unless customer.age <= 19 and transaction.value >= 100.00
     puts 'Input # of items in transaction:'
     items = gets.chomp
-    items = items.to_i
-    dscnt = discount(value) if member and items >= 3 and age >= 21
-    dscnt = 0.03 if items >= 3 and value <= 99.99 and (13..19) === age
+    transaction.items = items.to_i
+    customer.dscnt = transaction.discount(transaction.value) if customer.member and transaction.items >= 3 and customer.age >= 21
+    customer.dscnt = 0.03 if transaction.items >= 3 and transaction.value <= 99.99 and (13..19) === customer.age
   end
 else
-  customer_service = false
+  customer.service = false
 end
 
 ## OUTPUT ##
-puts "\nCustomer service: #{customer_service}\nOffer membership: #{offer_membership}\nDiscount rate: #{dscnt}"
+puts "\nCustomer service: #{customer.service}\nOffer membership: #{customer.offer_membership}\nDiscount rate: #{customer.dscnt}"
 
