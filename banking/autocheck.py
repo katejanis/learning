@@ -3,10 +3,11 @@ import pexpect
 
 class BankingAutocheck(unittest.TestCase):
     timeout = 3
+    version = 'Banking v0.4'
 
     def test_bv0_3_01(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('11')
         bank.expect('Customer service: false', self.timeout)
         bank.expect('Offer membership: false', self.timeout)
@@ -16,7 +17,7 @@ class BankingAutocheck(unittest.TestCase):
 
     def test_bv0_3_02(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('12')
         bank.expect('Customer service: false', self.timeout)
         bank.expect('Offer membership: false', self.timeout)
@@ -26,7 +27,7 @@ class BankingAutocheck(unittest.TestCase):
 
     def test_bv0_3_03(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('13')
 	bank.sendline('99.99')
 	bank.sendline('3')
@@ -38,7 +39,7 @@ class BankingAutocheck(unittest.TestCase):
 
     def test_bv0_3_04(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('13')
 	bank.sendline('99.98')
 	bank.sendline('3')
@@ -50,7 +51,7 @@ class BankingAutocheck(unittest.TestCase):
 
     def test_bv_03_05(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('19')
         bank.sendline('99.98')
         bank.sendline('3')
@@ -61,7 +62,7 @@ class BankingAutocheck(unittest.TestCase):
 
     def test_bv_03_06(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('19')
         bank.sendline('99.99')
         bank.sendline('3')
@@ -72,7 +73,7 @@ class BankingAutocheck(unittest.TestCase):
        
     def test_bv_03_07(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('13')
         bank.sendline('100.00')
         bank.expect('Customer service: true', self.timeout)
@@ -82,7 +83,7 @@ class BankingAutocheck(unittest.TestCase):
         
     def test_bv_03_08(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('13')
         bank.sendline('99.99')
         bank.sendline('2')
@@ -93,7 +94,7 @@ class BankingAutocheck(unittest.TestCase):
         
     def test_bv_03_09(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('13')
         bank.sendline('99.98')
         bank.sendline('2')
@@ -104,7 +105,7 @@ class BankingAutocheck(unittest.TestCase):
     
     def test_bv_03_10(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('19')
         bank.sendline('99.99')
         bank.sendline('2')
@@ -115,7 +116,7 @@ class BankingAutocheck(unittest.TestCase):
     
     def test_bv_03_11(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('19')
         bank.sendline('100.00')
         bank.expect('Customer service: true', self.timeout)
@@ -125,7 +126,7 @@ class BankingAutocheck(unittest.TestCase):
     
     def test_bv_03_12(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('20')
         bank.sendline('99.98')
         bank.sendline('2')
@@ -136,7 +137,7 @@ class BankingAutocheck(unittest.TestCase):
     
     def test_bv_03_13(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('20')
         bank.sendline('99.99')
         bank.sendline('3')
@@ -147,7 +148,7 @@ class BankingAutocheck(unittest.TestCase):
     
     def test_bv_03_14(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('20')
         bank.sendline('99.99')
         bank.sendline('2')
@@ -158,7 +159,7 @@ class BankingAutocheck(unittest.TestCase):
         
     def test_bv_03_15(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('20')
         bank.sendline('100.00')
         bank.sendline('2')
@@ -169,7 +170,7 @@ class BankingAutocheck(unittest.TestCase):
     
     def test_bv_03_16(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('20')
         bank.sendline('100.00')
         bank.sendline('3')
@@ -180,7 +181,7 @@ class BankingAutocheck(unittest.TestCase):
     
     def test_bv_03_17(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('20')
         bank.sendline('499.99')
         bank.sendline('3')
@@ -191,7 +192,7 @@ class BankingAutocheck(unittest.TestCase):
         
     def test_bv_03_18(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('20')
         bank.sendline('499.99')
         bank.sendline('2')
@@ -202,7 +203,7 @@ class BankingAutocheck(unittest.TestCase):
     
     def test_bv_03_19(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('20')
         bank.sendline('500.00')
         bank.sendline('3')
@@ -213,7 +214,7 @@ class BankingAutocheck(unittest.TestCase):
 
     def test_bv_03_20(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('20')
         bank.sendline('500.00')
         bank.sendline('2')
@@ -224,7 +225,7 @@ class BankingAutocheck(unittest.TestCase):
     
     def test_bv_03_21(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('20')
         bank.sendline('999.99')
         bank.sendline('3')
@@ -235,7 +236,7 @@ class BankingAutocheck(unittest.TestCase):
         
     def test_bv_03_22(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('20')
         bank.sendline('999.99')
         bank.sendline('2')
@@ -246,7 +247,7 @@ class BankingAutocheck(unittest.TestCase):
     
     def test_bv_03_23(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('20')
         bank.sendline('1000.00')
         bank.sendline('3')
@@ -257,7 +258,7 @@ class BankingAutocheck(unittest.TestCase):
     
     def test_bv_03_24(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('20')
         bank.sendline('1000.00')
         bank.sendline('2')
@@ -268,7 +269,7 @@ class BankingAutocheck(unittest.TestCase):
     
     def test_bv_03_25(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('20')
         bank.sendline('1000.01')
         bank.sendline('3')
@@ -279,7 +280,7 @@ class BankingAutocheck(unittest.TestCase):
     
     def test_bv_03_26(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('20')
         bank.sendline('1000.01')
         bank.sendline('2')
@@ -290,7 +291,7 @@ class BankingAutocheck(unittest.TestCase):
 
     def test_bv_03_27(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('21')
         bank.sendline('y')
         bank.sendline('99.99')
@@ -302,7 +303,7 @@ class BankingAutocheck(unittest.TestCase):
 
     def test_bv_03_28(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('21')
         bank.sendline('y')
         bank.sendline('99.99')
@@ -314,7 +315,7 @@ class BankingAutocheck(unittest.TestCase):
         
     def test_bv_03_29(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('21')
         bank.sendline('y')
         bank.sendline('100.00')
@@ -326,7 +327,7 @@ class BankingAutocheck(unittest.TestCase):
     
     def test_bv_03_30(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('21')
         bank.sendline('y')
         bank.sendline('499.99')
@@ -338,7 +339,7 @@ class BankingAutocheck(unittest.TestCase):
 
     def test_bv_03_31(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('21')
         bank.sendline('y')
         bank.sendline('500.00')
@@ -350,7 +351,7 @@ class BankingAutocheck(unittest.TestCase):
     
     def test_bv_03_32(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('21')
         bank.sendline('y')
         bank.sendline('999.99')
@@ -362,7 +363,7 @@ class BankingAutocheck(unittest.TestCase):
     
     def test_bv_03_33(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('21')
         bank.sendline('y')
         bank.sendline('1000.00')
@@ -374,7 +375,7 @@ class BankingAutocheck(unittest.TestCase):
     
     def test_bv_03_34(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('21')
         bank.sendline('y')
         bank.sendline('1000.01')
@@ -386,7 +387,7 @@ class BankingAutocheck(unittest.TestCase):
     
     def test_bv_03_35(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('21')
         bank.sendline('y')
         bank.sendline('100.00')
@@ -398,7 +399,7 @@ class BankingAutocheck(unittest.TestCase):
     
     def test_bv_03_36(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('21')
         bank.sendline('y')
         bank.sendline('499.99')
@@ -410,7 +411,7 @@ class BankingAutocheck(unittest.TestCase):
     
     def test_bv_03_37(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('21')
         bank.sendline('y')
         bank.sendline('500.00')
@@ -422,7 +423,7 @@ class BankingAutocheck(unittest.TestCase):
     
     def test_bv_03_38(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('21')
         bank.sendline('y')
         bank.sendline('999.99')
@@ -434,7 +435,7 @@ class BankingAutocheck(unittest.TestCase):
     
     def test_bv_03_39(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('21')
         bank.sendline('y')
         bank.sendline('1000.00')
@@ -446,7 +447,7 @@ class BankingAutocheck(unittest.TestCase):
         
     def test_bv_03_40(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('21')
         bank.sendline('y')
         bank.sendline('1000.01')
@@ -458,7 +459,7 @@ class BankingAutocheck(unittest.TestCase):
     
     def test_bv_03_41(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('21')
         bank.sendline('n')
         bank.sendline('10')
@@ -471,7 +472,7 @@ class BankingAutocheck(unittest.TestCase):
     
     def test_bv_03_42(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('21')
         bank.sendline('n')
         bank.sendline('9')
@@ -484,7 +485,7 @@ class BankingAutocheck(unittest.TestCase):
     
     def test_bv_03_43(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('21')
         bank.sendline('n')
         bank.sendline('10')
@@ -497,7 +498,7 @@ class BankingAutocheck(unittest.TestCase):
     
     def test_bv_03_44(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('21')
         bank.sendline('n')
         bank.sendline('9')
@@ -510,7 +511,7 @@ class BankingAutocheck(unittest.TestCase):
     
     def test_bv_03_45(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('21')
         bank.sendline('n')
         bank.sendline('10')
@@ -523,7 +524,7 @@ class BankingAutocheck(unittest.TestCase):
     
     def test_bv_03_46(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('21')
         bank.sendline('n')
         bank.sendline('9')
@@ -536,7 +537,7 @@ class BankingAutocheck(unittest.TestCase):
     
     def test_bv_03_47(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('21')
         bank.sendline('n')
         bank.sendline('10')
@@ -549,7 +550,7 @@ class BankingAutocheck(unittest.TestCase):
     
     def test_bv_03_48(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('21')
         bank.sendline('n')
         bank.sendline('9')
@@ -562,7 +563,7 @@ class BankingAutocheck(unittest.TestCase):
     
     def test_bv_03_49(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('21')
         bank.sendline('n')
         bank.sendline('10')
@@ -575,7 +576,7 @@ class BankingAutocheck(unittest.TestCase):
     
     def test_bv_03_50(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('21')
         bank.sendline('n')
         bank.sendline('9')
@@ -588,7 +589,7 @@ class BankingAutocheck(unittest.TestCase):
     
     def test_bv_03_51(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('21')
         bank.sendline('n')
         bank.sendline('10')
@@ -601,7 +602,7 @@ class BankingAutocheck(unittest.TestCase):
     
     def test_bv_03_52(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('21')
         bank.sendline('n')
         bank.sendline('9')
@@ -614,7 +615,7 @@ class BankingAutocheck(unittest.TestCase):
         
     def test_bv_03_53(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('21')
         bank.sendline('n')
         bank.sendline('10')
@@ -627,7 +628,7 @@ class BankingAutocheck(unittest.TestCase):
     
     def test_bv_03_54(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('21')
         bank.sendline('n')
         bank.sendline('9')
@@ -640,7 +641,7 @@ class BankingAutocheck(unittest.TestCase):
     
     def test_bv_03_55(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('21')
         bank.sendline('n')
         bank.sendline('10')
@@ -653,7 +654,7 @@ class BankingAutocheck(unittest.TestCase):
     
     def test_bv_03_56(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('21')
         bank.sendline('n')
         bank.sendline('9')
@@ -666,7 +667,7 @@ class BankingAutocheck(unittest.TestCase):
     
     def test_bv_03_57(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('21')
         bank.sendline('n')
         bank.sendline('10')
@@ -679,7 +680,7 @@ class BankingAutocheck(unittest.TestCase):
     
     def test_bv_03_58(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('21')
         bank.sendline('n')
         bank.sendline('9')
@@ -692,7 +693,7 @@ class BankingAutocheck(unittest.TestCase):
     
     def test_bv_03_59(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('21')
         bank.sendline('n')
         bank.sendline('10')
@@ -705,7 +706,7 @@ class BankingAutocheck(unittest.TestCase):
     
     def test_bv_03_60(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('21')
         bank.sendline('n')
         bank.sendline('9')
@@ -718,7 +719,7 @@ class BankingAutocheck(unittest.TestCase):
     
     def test_bv_03_61(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('21')
         bank.sendline('n')
         bank.sendline('10')
@@ -731,7 +732,7 @@ class BankingAutocheck(unittest.TestCase):
         
     def test_bv_03_62(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('21')
         bank.sendline('n')
         bank.sendline('9')
@@ -744,7 +745,7 @@ class BankingAutocheck(unittest.TestCase):
     
     def test_bv_03_63(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('21')
         bank.sendline('n')
         bank.sendline('10')
@@ -757,7 +758,7 @@ class BankingAutocheck(unittest.TestCase):
 
     def test_bv_03_64(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('21')
         bank.sendline('n')
         bank.sendline('9')
@@ -770,7 +771,7 @@ class BankingAutocheck(unittest.TestCase):
     
     def test_bv_03_65(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('21')
         bank.sendline('n')
         bank.sendline('10')
@@ -783,7 +784,7 @@ class BankingAutocheck(unittest.TestCase):
     
     def test_bv_03_66(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('21')
         bank.sendline('n')
         bank.sendline('9')
@@ -796,7 +797,7 @@ class BankingAutocheck(unittest.TestCase):
     
     def test_bv_03_67(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('21')
         bank.sendline('n')
         bank.sendline('10')
@@ -809,7 +810,7 @@ class BankingAutocheck(unittest.TestCase):
     
     def test_bv_03_68(self):
         bank = pexpect.spawn('ruby run.rb')
-        bank.expect(['Banking v0.3', 'Customer age (integer):'], self.timeout)
+        bank.expect([self.version, 'Customer age (integer):'], self.timeout)
         bank.sendline('21')
         bank.sendline('n')
         bank.sendline('9')
