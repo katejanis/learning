@@ -1,6 +1,6 @@
 ### Square 2.1
 
-This document describes Square 2.0 software.
+This document describes Square 2.1 software.
 
 
 #### Feature: Quadratic equation
